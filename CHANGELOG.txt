@@ -1,4 +1,8 @@
 Version 1.0.0
 
-- Feature 1
-- Feature 2
+- Features : 
+
+CSS-only ADC 2.0 for single and multiple questions
+Colors of the input as well as the response text can be changed
+
+Does NOT handle exclusive answers in multiple questions
