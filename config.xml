@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control xmlns="http://www.askia.com/ADCSchema"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
+         version="2.0.0"
+         askiaCompat="5.3.3">
+  <info>
+    <name>adc2-Granite-closed</name>
+    <guid>c93e2e8f-a558-41c6-a046-4e230e589b4d</guid>
+    <version>1.0.0</version>
+    <date>2015-05-21</date>
+    <description>
+      <![CDATA[
+        Describe your ADC here
+        
+        Tested in:
+          List the browsers name and version where the ADC should work on.
+          
+        Dependencies:
+          - Name of the 3rd party resource. Version. URL 
+          - Name of the 3rd party resource. Version. URL
+        
+        Notes:
+          Special notes about incompatibility or warnings
+      ]]>
+    </description>
+    <author>
+      <![CDATA[
+        Stephen Bronnec <stephen@askia.com>
+      ]]>
+    </author>
+    <company>Askia</company>
+    <helpURL></helpURL>
+    <site></site>
+    <categories>
+      <category>General</category>
+    </categories>
+    <style width="400" height="300"/>
+    <constraints>
+      <constraint on="questions" single="true" multiple="true" numeric="false" date="false" open="false" />
+      <constraint on="controls" responseblock="true" />
+    </constraints>
+  </info>
+
+  <outputs defaultOutput="fallback">
+    <output id="fallback">
+      <description><![CDATA[Fallback when the browser doesn't support Javascript]]></description>
+      <condition><![CDATA[Not(Browser.Support("javascript"))]]></condition>
+      
+      <content fileName="dynamicStyle.css" type="css" mode="dynamic" position="placeholder" />
+      <content fileName="single.html" type="html" mode="dynamic" position="none" />
+      <content fileName="multiple.html" type="html" mode="dynamic" position="none" />      
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+    
+    </output>
+  </outputs>
+
+  <properties>
+
+    <category id="general" name="General">
+      <property xsi:type="standardProperty" id="innerCircleBGTop" name ="Inner circle BG gradient top" type="color">
+        <description></description>
+        <value>34,34,34</value>
+      </property>
+      <property xsi:type="standardProperty" id="innerCircleBGBottom" name ="Inner circle BG gradient bottom" type="color">
+          <description></description>
+          <value>69,72,77</value>
+        </property>
+      <property xsi:type="standardProperty" id="outerCircleBGTop" name ="Outer circle BG gradient top" type="color">
+          <description></description>
+          <value>223,229,215</value>
+        </property>
+      <property xsi:type="standardProperty" id="outerCircleBGBottom" name ="Outer circle BG gradient bottom" type="color">
+          <description></description>
+          <value>179,190,173</value>
+        </property>
+      <property xsi:type="standardProperty" id="tickColor" name ="Radio tick color" type="color">
+            <description></description>
+            <value>252,255,244</value>
+          </property>
+      <property xsi:type="standardProperty" id="responseColor" name ="Response color when selected" type="color">
+            <description></description>
+            <value>59,136,216</value>
+          </property>
+  
+    </category>
+    
+  </properties>
+</control>

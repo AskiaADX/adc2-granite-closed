@@ -1,0 +1,22 @@
+﻿{%
+Dim inputName = CurrentQuestion.InputName()
+Dim inputValue
+Dim caption
+
+Dim i
+        Dim inputId
+        Dim attrChecked
+        For i = 1 To CurrentQuestion.AvailableResponses.Count
+            inputId     = inputName + "_" + i
+            attrChecked = On(CurrentQuestion.AvailableResponses[i].IsSelected, "checked=\"checked\"", "")
+            inputValue  = CurrentQuestion.AvailableResponses[i].InputValue()
+            caption     = CurrentQuestion.AvailableResponses[i].Caption
+%}
+<div class="checkWrapper">
+    <input type="checkbox" value="{%= inputValue %}" id="{%= inputId %}" name="{%= inputName %}" {%=attrChecked %} />
+    <label for="{%= inputId %}">
+        <span class="item-label">{%= caption %}</span>
+    </label>
+</div>
+        {% Next %}
+
